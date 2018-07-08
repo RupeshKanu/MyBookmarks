@@ -1,0 +1,29 @@
+{
+  "$jason": {
+    "head": {
+      "actions": {
+        "handleLink": [{
+          "{{#if $jason.url.indexOf('signin') !== -1 }}": {
+            "type": "$href",
+            "options": {
+              "url": "file://key.html"
+            }
+          }
+        }, {
+          "{{#else}}": {
+            "type": "$default"
+          }
+        }]
+      }
+    },
+    "body": {
+      "background": {
+        "type": "html",
+        "url": "file://index.html",
+        "action": {
+          "trigger": "handleLink"
+        }
+      }
+    }
+  }
+}
